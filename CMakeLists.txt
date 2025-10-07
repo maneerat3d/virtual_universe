@@ -15,6 +15,8 @@ file(GLOB_RECURSE HEADER_FILES src/*.h)
 # Create the library target
 add_executable(${PROJECT_NAME} src/main.cpp ${CPP_SOURCES} ${HEADER_FILES})
 
+target_compile_definitions(${PROJECT_NAME} PRIVATE _USE_MATH_DEFINES)
+
 # Copy shaders
 file(COPY src/shaders DESTINATION ${CMAKE_BINARY_DIR}/)
 
